@@ -42,14 +42,14 @@ const setViewport = (width: number) => {
 
 const renderComponent = () =>
   render(<Groups />, {
-    wrapper: ({ children }) => <MemoryRouter>{children}</MemoryRouter>,
+    wrapper: ({ children }: { children: React.ReactNode }) => <MemoryRouter>{children}</MemoryRouter>,
   });
 
 describe('<Groups />', () => {
   beforeEach(() => {
     setViewport(1024);
     mockedUseGroupsPage.mockReturnValue({
-      peopleQuery: createQueryState({ isLoading: true }),
+      peopleQuery: createQueryState({ isLoading: true }) as any,
       theme: baseTheme,
       dispatch: vi.fn(),
     });
@@ -63,7 +63,7 @@ describe('<Groups />', () => {
 
   it('renders the success state when groups arrive', () => {
     mockedUseGroupsPage.mockReturnValue({
-      peopleQuery: createQueryState({ data: [{ name: 'Frontend Team' }] }),
+      peopleQuery: createQueryState({ data: [{ name: 'Frontend Team' }] }) as any,
       theme: baseTheme,
       dispatch: vi.fn(),
     });
@@ -76,7 +76,7 @@ describe('<Groups />', () => {
 
   it('renders the error feedback when query fails', () => {
     mockedUseGroupsPage.mockReturnValue({
-      peopleQuery: createQueryState({ isError: true }),
+      peopleQuery: createQueryState({ isError: true }) as any,
       theme: baseTheme,
       dispatch: vi.fn(),
     });
