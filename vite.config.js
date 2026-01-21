@@ -1,18 +1,25 @@
 import { VitePWA } from 'vite-plugin-pwa'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 // https://vitejs.dev/config/
 // https://vitest.dev/guide/reporters.html
 // TODO : .env
-export default defineConfig({  
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@react-cupertino-ui/shared/lib/utils': path.resolve(__dirname, 'node_modules/@react-cupertino-ui/shared/dist/lib/utils.js'),
+      '@react-cupertino-ui/shared/lib/interfaces/BaseProps': path.resolve(__dirname, 'node_modules/@react-cupertino-ui/shared/dist/lib/interfaces/BaseProps.js'),
+    },
+  },
   plugins: [
-    react(), 
+    react(),
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
         clientsClaim: true,
         skipWaiting: true
-      }, 
+      },
       devOptions: {
         enabled: true
       },

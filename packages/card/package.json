@@ -1,9 +1,0 @@
-{
-  "name": "@react-cupertino-ui/card",
-  "version": "1.0.0",
-  "main": "index.tsx",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": ">=18"
-  }
-}

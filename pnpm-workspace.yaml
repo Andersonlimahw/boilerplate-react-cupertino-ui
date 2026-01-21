@@ -1,2 +1,4 @@
-packages:
-  - 'packages/*'
+ignoredBuiltDependencies:
+  - edgedriver
+  - esbuild
+  - geckodriver
