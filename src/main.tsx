@@ -27,9 +27,17 @@ if (import.meta.env.DEV) {
   console.log('Enviroment: ', import.meta.env);
 }
 
+import { Landing } from './pages/Landing';
+
+// ... (other imports)
+
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Landing />,
+  },
+  {
+    path: "/login",
     element: <Login />,
   },
   {
@@ -40,10 +48,7 @@ const router = createBrowserRouter([
     path: "/groups",
     element: <Groups />,
   },
-  {
-    path: "/groups",
-    element: <Groups />,
-  },
+  // Removed duplicate groups route
   {
     path: "/settings",
     element: <Settings />,
@@ -64,7 +69,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: slateTimeInMiliseconds,
-      retry: 2, 
+      retry: 2,
       refetchOnMount: false,
       refetchOnWindowFocus: false,
     }

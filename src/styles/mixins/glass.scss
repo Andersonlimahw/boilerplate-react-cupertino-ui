@@ -1,0 +1,17 @@
+@mixin glass-panel($mode: light, $blur: 10px, $opacity: 0.5) {
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    background-color: rgba(255, 255, 255, $opacity);
+}
+
+@mixin glass-border($mode: light) {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@mixin glass-refraction() {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@mixin glass() {
+    @include glass-panel();
+}

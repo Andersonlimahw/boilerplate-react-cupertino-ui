@@ -1,4 +1,0 @@
-ignoredBuiltDependencies:
-  - edgedriver
-  - esbuild
-  - geckodriver

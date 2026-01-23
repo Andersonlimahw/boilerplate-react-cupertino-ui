@@ -10,6 +10,15 @@ export default defineConfig({
     alias: {
       '@react-cupertino-ui/shared/lib/utils': path.resolve(__dirname, 'node_modules/@react-cupertino-ui/shared/dist/lib/utils.js'),
       '@react-cupertino-ui/shared/lib/interfaces/BaseProps': path.resolve(__dirname, 'node_modules/@react-cupertino-ui/shared/dist/lib/interfaces/BaseProps.js'),
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler', // or "modern"
+        includePaths: [path.resolve(__dirname, './src')],
+      },
     },
   },
   plugins: [
