@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       '@react-cupertino-ui/shared/lib/utils': path.resolve(__dirname, 'node_modules/@react-cupertino-ui/shared/dist/lib/utils.js'),
       '@react-cupertino-ui/shared/lib/interfaces/BaseProps': path.resolve(__dirname, 'node_modules/@react-cupertino-ui/shared/dist/lib/interfaces/BaseProps.js'),
+      '@react-cupertino-ui/shared/lib/constants/tokens/glass': path.resolve(__dirname, './src/mocks/glass-tokens.ts'),
       '@': path.resolve(__dirname, './src'),
     },
   },

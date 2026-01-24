@@ -3,6 +3,22 @@ import { Button } from '@react-cupertino-ui/button';
 import { Card } from '@react-cupertino-ui/card';
 import { Title } from '@react-cupertino-ui/title';
 import { Accordion } from '@react-cupertino-ui/accordion';
+import {
+    Lightning,
+    Target,
+    Database,
+    Palette,
+    CheckCircle,
+    DeviceMobile,
+    Package,
+    Lock,
+    Atom,
+    ChartBar,
+    Sparkle,
+    ArrowsClockwise,
+    Rocket,
+    GithubLogo
+} from '@phosphor-icons/react';
 
 export const Landing = () => {
     const navigate = useNavigate();
@@ -17,62 +33,62 @@ export const Landing = () => {
 
     const features = [
         {
-            emoji: "⚡",
+            icon: <Lightning size={32} className="text-yellow-400" weight="fill" />,
             title: "Vite Powered",
             description: "Lightning fast HMR and optimized build performance. Experience sub-second hot module replacement and instant feedback during development."
         },
         {
-            emoji: "🎯",
+            icon: <Target size={32} className="text-red-400" weight="duotone" />,
             title: "Type Safety First",
             description: "Built with TypeScript for robust, error-free code. Catch bugs before runtime with comprehensive type checking and IntelliSense support."
         },
         {
-            emoji: "🗄️",
+            icon: <Database size={32} className="text-blue-400" weight="duotone" />,
             title: "Smart State Management",
             description: "Zustand for global state and React Query for server state. Handle complex application state with minimal boilerplate and maximum performance."
         },
         {
-            emoji: "🎨",
+            icon: <Palette size={32} className="text-purple-400" weight="duotone" />,
             title: "Beautiful UI Components",
             description: "100+ pre-built Cupertino UI components with Tailwind CSS. Create stunning, native-feeling interfaces that delight your users."
         },
         {
-            emoji: "✅",
+            icon: <CheckCircle size={32} className="text-green-400" weight="duotone" />,
             title: "Testing Suite Included",
             description: "Complete testing infrastructure with Vitest and Playwright. Write unit, integration, and E2E tests with confidence and comprehensive coverage."
         },
         {
-            emoji: "📱",
+            icon: <DeviceMobile size={32} className="text-orange-400" weight="duotone" />,
             title: "PWA Ready",
             description: "Offline capabilities and app-like experience out of the box. Turn your web app into a progressive web app with zero configuration."
         },
         {
-            emoji: "📦",
+            icon: <Package size={32} className="text-amber-400" weight="duotone" />,
             title: "API Mocking",
             description: "MirageJS integration for realistic API mocking. Develop and test without backend dependencies, ensuring consistent development workflow."
         },
         {
-            emoji: "🔒",
+            icon: <Lock size={32} className="text-emerald-400" weight="duotone" />,
             title: "Production Security",
             description: "Security best practices built-in from day one. Protected against common vulnerabilities with secure defaults and dependency updates."
         },
         {
-            emoji: "⚛️",
+            icon: <Atom size={32} className="text-cyan-400" weight="duotone" />,
             title: "Modern Architecture",
             description: "Clean, modular structure following React best practices. Scalable folder organization and code patterns that grow with your project."
         },
         {
-            emoji: "📊",
+            icon: <ChartBar size={32} className="text-indigo-400" weight="duotone" />,
             title: "Performance Optimized",
             description: "Code splitting, lazy loading, and optimization strategies. Ship fast applications with excellent Core Web Vitals scores."
         },
         {
-            emoji: "✨",
+            icon: <Sparkle size={32} className="text-yellow-300" weight="duotone" />,
             title: "Developer Experience",
             description: "ESLint, Prettier, and Git hooks configured. Maintain code quality and consistency across your entire team effortlessly."
         },
         {
-            emoji: "🔄",
+            icon: <ArrowsClockwise size={32} className="text-sky-400" weight="duotone" />,
             title: "CI/CD Ready",
             description: "Optimized for continuous integration and deployment. GitHub Actions, parallel testing, and automated workflows included."
         }
@@ -122,49 +138,30 @@ export const Landing = () => {
     ];
 
     return (
-        <div style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%)' }}>
+        <div className="min-h-screen">
             {/* Hero Section */}
-            <section style={{
-                padding: '80px 20px',
-                textAlign: 'center',
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                color: 'white'
-            }}>
-                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-                    <div style={{
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        marginBottom: '20px',
-                        opacity: 0.9,
-                        letterSpacing: '1px'
-                    }}>
+            <section className="pt-32 pb-20 px-4 text-center">
+                <div className="max-w-4xl mx-auto backdrop-blur-2xl bg-white/5 rounded-3xl p-12 border border-white/10 shadow-2xl">
+                    <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-panel text-sm font-semibold tracking-wider text-blue-300">
                         v1.0.0 • PRODUCTION READY
                     </div>
 
-                    <h1 style={{
-                        fontSize: '56px',
-                        fontWeight: 700,
-                        marginBottom: '24px',
-                        lineHeight: 1.2
-                    }}>
+                    <h1 className="text-6xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
                         Boilerplate React Cupertino UI
                     </h1>
 
-                    <p style={{
-                        fontSize: '20px',
-                        lineHeight: 1.6,
-                        marginBottom: '40px',
-                        opacity: 0.95
-                    }}>
+                    <p className="text-xl leading-relaxed mb-10 text-glass-text-secondary max-w-2xl mx-auto">
                         The ultimate production-ready starting point for modern, high-performance React applications.
-                        Built with speed, scalability, and developer experience in mind. Skip the setup and focus on building amazing products.
+                        Built with speed, scalability, and developer experience in mind.
                     </p>
 
-                    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Button size="lg" onClick={handleGetStarted}>
-                            🚀 Get Started
+                    <div className="flex gap-4 justify-center flex-wrap">
+                        <Button size="lg" onClick={handleGetStarted} className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30 border-none transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                            <Rocket size={24} weight="fill" />
+                            Get Started
                         </Button>
-                        <Button size="lg" variant="secondary" onClick={handleGithub}>
+                        <Button size="lg" onClick={handleGithub} className="glass-button text-white hover:bg-white/10 border-white/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                            <GithubLogo size={24} weight="fill" />
                             View on GitHub
                         </Button>
                     </div>
@@ -172,90 +169,68 @@ export const Landing = () => {
             </section>
 
             {/* Features Section */}
-            <section style={{ padding: '80px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-                    <Title>Everything you need to build faster</Title>
-                    <p style={{ fontSize: '18px', color: '#666', marginTop: '16px' }}>
+            <section className="py-20 px-4 max-w-7xl mx-auto">
+                <div className="text-center mb-16">
+                    <Title className="text-4xl text-white mb-4">Everything you need</Title>
+                    <p className="text-lg text-glass-text-secondary">
                         A comprehensive suite of tools and configurations pre-setup for your success
                     </p>
                 </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '24px'
-                }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
-                        <Card key={index} style={{ padding: '24px', height: '100%' }}>
-                            <div style={{ fontSize: '32px', marginBottom: '16px' }}>{feature.emoji}</div>
-                            <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px', color: '#333' }}>
+                        <div key={index} className="glass-panel p-8 hover:bg-white/15 transition-colors duration-300">
+                            <div className="mb-4">{feature.icon}</div>
+                            <h3 className="text-xl font-semibold mb-3 text-white">
                                 {feature.title}
                             </h3>
-                            <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6 }}>
+                            <p className="text-sm text-glass-text-secondary leading-relaxed">
                                 {feature.description}
                             </p>
-                        </Card>
+                        </div>
                     ))}
                 </div>
             </section>
 
             {/* FAQ Section */}
-            <section style={{ padding: '80px 20px', maxWidth: '800px', margin: '0 auto' }}>
-                <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-                    <Title>Frequently Asked Questions</Title>
+            <section className="py-20 px-4 max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                    <Title className="text-3xl text-white">Frequently Asked Questions</Title>
                 </div>
 
-                <Accordion
-                    items={faqs.map(faq => ({
-                        id: faq.id,
-                        title: faq.question,
-                        content: faq.answer
-                    }))}
-                />
+                <div className="glass-panel p-6 bg-white/80 dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-white/10 shadow-xl">
+                    <Accordion
+                        items={faqs.map(faq => ({
+                            id: faq.id,
+                            title: faq.question,
+                            content: faq.answer
+                        }))}
+                        className="text-gray-900 dark:text-white"
+                    />
+                </div>
             </section>
 
             {/* Footer */}
-            <footer style={{
-                padding: '40px 20px',
-                textAlign: 'center',
-                borderTop: '1px solid #e0e0e0',
-                background: 'white'
-            }}>
-                <div style={{ marginBottom: '16px' }}>
-                    <a href="https://twitter.com/andersonlimahw" target="_blank" rel="noopener noreferrer" style={{
-                        margin: '0 12px',
-                        color: '#667eea',
-                        textDecoration: 'none',
-                        fontSize: '14px'
-                    }}>
+            <footer className="py-10 px-4 text-center border-t border-white/10 bg-black/20 backdrop-blur-md">
+                <div className="mb-4 space-x-6">
+                    <a href="https://twitter.com/andersonlimahw" target="_blank" rel="noopener noreferrer"
+                        className="text-white/60 hover:text-white transition-colors text-sm font-medium">
                         Twitter
                     </a>
-                    <a href="https://linkedin.com/in/andersonlimahw" target="_blank" rel="noopener noreferrer" style={{
-                        margin: '0 12px',
-                        color: '#667eea',
-                        textDecoration: 'none',
-                        fontSize: '14px'
-                    }}>
+                    <a href="https://linkedin.com/in/andersonlimahw" target="_blank" rel="noopener noreferrer"
+                        className="text-white/60 hover:text-white transition-colors text-sm font-medium">
                         LinkedIn
                     </a>
-                    <a href="https://github.com/andersonlimahw" target="_blank" rel="noopener noreferrer" style={{
-                        margin: '0 12px',
-                        color: '#667eea',
-                        textDecoration: 'none',
-                        fontSize: '14px'
-                    }}>
+                    <a href="https://github.com/andersonlimahw" target="_blank" rel="noopener noreferrer"
+                        className="text-white/60 hover:text-white transition-colors text-sm font-medium">
                         GitHub
                     </a>
-                    <a href="https://lemon.dev.br" target="_blank" rel="noopener noreferrer" style={{
-                        margin: '0 12px',
-                        color: '#667eea',
-                        textDecoration: 'none',
-                        fontSize: '14px'
-                    }}>
+                    <a href="https://lemon.dev.br" target="_blank" rel="noopener noreferrer"
+                        className="text-white/60 hover:text-white transition-colors text-sm font-medium">
                         Website
                     </a>
                 </div>
-                <p style={{ fontSize: '14px', color: '#999' }}>
+                <p className="text-sm text-white/40">
                     © 2026 Anderson Lima (Lemon 🍋). All rights reserved.
                 </p>
             </footer>

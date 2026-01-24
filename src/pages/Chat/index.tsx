@@ -71,14 +71,14 @@ export const Chat = () => {
 
       <div className="container mx-auto mt-[-128px] rounded-sm relative z-20">
         <div className="py-6 h-screen">
-          <div className={`flex shadow-lg rounded h-full ${containerClasses[screnType]} bg-white/80 dark:bg-black/80 backdrop-blur-xl`}>
+          <div className={`flex h-full ${containerClasses[screnType]} glass-panel overflow-hidden border-none`}>
             {/* Left */}
             {
               !hasSelectedContact && (
-                <div className="p-6 flex flex-col justify-between h-full w-full md:w-1/3 border-r border-gray-200 dark:border-gray-700">
+                <div className="p-6 flex flex-col justify-between h-full w-full md:w-1/3 border-r border-white/10">
                   <div>
-                    <h1 className="text-3xl font-bold mb-2">Happy customs!</h1>
-                    <p className="text-gray-500">Request sample result on right!</p>
+                    <h1 className="text-3xl font-bold mb-2 text-white">Happy customs!</h1>
+                    <p className="text-glass-text-secondary">Request sample result on right!</p>
                   </div>
                   <Footer />
                 </div>
@@ -86,7 +86,7 @@ export const Chat = () => {
             }
 
             {/* Right */}
-            <div className={`flex flex-col relative ${messagesContainerClasses[screnType]}`}>
+            <div className={`flex flex-col relative ${messagesContainerClasses[screnType]} bg-black/20`}>
               <IntelligenceGlow active={isLoading} intensity={0.6}>
                 <div className="flex-1 overflow-y-auto p-4 flex flex-col justify-center items-center h-full min-h-[400px]">
                   {screenState[`${stateKey(peopleQuery)}`]?.render() ?? <AILoadingState variant="generating" />}

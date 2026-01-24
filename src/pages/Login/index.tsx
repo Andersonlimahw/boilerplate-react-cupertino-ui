@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { TextField } from '@react-cupertino-ui/text-field';
 import { Button } from '@react-cupertino-ui/button';
 import { Title } from '@react-cupertino-ui/title';
+import { Rocket, GoogleLogo, AppleLogo, GithubLogo } from '@phosphor-icons/react';
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -56,7 +57,16 @@ export const Login = () => {
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                    <div style={{ fontSize: '48px', marginBottom: '16px' }}>🚀</div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+                        <div style={{
+                            padding: '12px',
+                            background: 'rgba(118, 75, 162, 0.1)',
+                            borderRadius: '20px',
+                            color: '#764ba2'
+                        }}>
+                            <Rocket size={48} weight="fill" />
+                        </div>
+                    </div>
                     <Title>React Cupertino UI</Title>
                     <div style={{ color: '#666', marginTop: '8px', fontSize: '14px' }}>
                         {isSignUp ? 'Create your account' : 'Welcome back'}
@@ -110,19 +120,25 @@ export const Login = () => {
                     <Button
                         variant="secondary"
                         onClick={() => handleSocialLogin('Google')}
+                        className="flex items-center justify-center gap-2"
                     >
+                        <GoogleLogo size={20} weight="bold" />
                         Continue with Google
                     </Button>
                     <Button
                         variant="secondary"
                         onClick={() => handleSocialLogin('Apple')}
+                        className="flex items-center justify-center gap-2"
                     >
+                        <AppleLogo size={20} weight="fill" />
                         Continue with Apple
                     </Button>
                     <Button
                         variant="secondary"
                         onClick={() => handleSocialLogin('GitHub')}
+                        className="flex items-center justify-center gap-2"
                     >
+                        <GithubLogo size={20} weight="fill" />
                         Continue with GitHub
                     </Button>
                 </div>

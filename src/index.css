@@ -23,6 +23,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -33,6 +34,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: var(--app-bg, radial-gradient(circle at 50% -20%, #4c1d95 0%, #1e1b4b 50%, #0f172a 100%));
+  background-attachment: fixed;
+  color: theme('colors.glass.text');
 }
 
 #root {
@@ -42,5 +46,12 @@ body {
   width: 100%;
 }
 
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-background backdrop-blur-xl border border-glass-border shadow-lg rounded-2xl;
+  }
 
-
+  .glass-button {
+    @apply bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border border-white/10 transition-all duration-300;
+  }
+}
